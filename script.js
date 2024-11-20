@@ -1,15 +1,28 @@
 var cookies = 0;
+var cursor = 1;
+
 var pointers = 0;
 var pointerCostVar = 10;
+
+var children = 0;
+var childrenCostVar = 200;
+
 const counter = document.getElementById("counter");
+
 const pointerCounter = document.getElementById("pointerCount");
 const pointerCost = document.getElementById("pointerCost");
+
+const childCounter = document.getElementById("childCount");
+const childCost = document.getElementById("childCost");
+
+
+
 function clickMe() {
-    cookies++;
+    cookies += cursor;
     updatePage();
 }
 
-function itemBuy() {
+function pointerBuy() {
     if(cookies >= pointerCostVar) {
         cookies -= pointerCostVar;
         pointers++;
@@ -19,16 +32,34 @@ function itemBuy() {
     updatePage();
 }
 
-function pointerUpdate() {
-    cookies += pointers;
+function childBuy() {
+    if(cookies >= childrenCostVar) {
+        cookies -= childrenCostVar;
+        children++;
+        childrenCostVar *= 1.2;
+        childrenCostVar = Math.round(childrenCostVar);
+    }
     updatePage();
-    setTimeout(pointerUpdate, 1000);
 }
+
+
+
 
 function updatePage(){
-    counter.innerHTML = cookies;
+    counter.innerHTML = Math.round(cookies);
+
     pointerCounter.innerHTML = "Pointers: " + pointers;
     pointerCost.innerHTML = "Cost: " + pointerCostVar;
+
+    childCounter.innerHTML = "Children: " + children;
+    childCost.innerHTML = "Cost: " + childrenCostVar;
 }
 
-pointerUpdate();
+function cookieUpdate() {
+    cookies += pointers / 10;
+    cookies += children;
+    updatePage();
+    setTimeout(cookieUpdate, 100);
+}
+
+cookieUpdate();

@@ -24,13 +24,26 @@
 
 
             <div id = "Shop">
-                <h2>Shop</h2>
+                <h1>Shop</h1>
             </div>
-            <div id = "button1" onclick = "itemBuy()">    
-                <h3 id= "pointerCount">"Pointers: " 0</h3>
-                <button>Buy pointer</button>
-                <h4 id = "pointerCost">Cost: 10</h4>
+                <!-- Pointer: +1 cookie / second -->
+            <div id = "pointerButton" onclick = "pointerBuy()">    
+                <button>
+                    <h2 id= "pointerCount">Pointers: 0</h2>
+                    <h4 id = "pointerCost">Cost: 10</h4>
+                </button>
             </div>
+
+                <!-- child: +10 cookie / second -->
+            <div id = "childButton" onclick = "childBuy()">    
+                <button>
+                    <h2 id= "childCount">Children: 0</h2>
+                    <h4 id = "childCost">Cost: 200</h4>
+                </button>
+            </div>
+
+
+
         </div>
 
         <script src="script.js" async defer></script>
