@@ -24,6 +24,10 @@ To commit your changes on the school computer, type
 The quotation marks should be included and github-username and github-email should be replaced with you GitHub username and the email linked to your GitHub account. 
 Then, go to Source Control, enter a commit message, then commit and push your change to the repository you forked. 
 
+git add .
+git commit -m "save"
+git push
+
 # Ideas:
 __HTML__
 

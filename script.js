@@ -42,6 +42,17 @@ function childBuy() {
     updatePage();
 }
 
+function buyAll() {
+    while(cookies >= childrenCostVar) {
+        childBuy();
+    }
+    while(cookies >= pointerCostVar) {
+        pointerBuy();
+    }
+}
+
+
+
 
 
 
