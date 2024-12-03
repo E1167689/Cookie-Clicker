@@ -2,6 +2,19 @@
     /* outline: red 1px solid; */
 /* } */
 
+#shopUI{
+    background-color: blue;
+}
+
+#UIButtons{
+    display:flex;
+}
+
+
+
+
+
+
 body{
     width: 100%;
     height: 100%;

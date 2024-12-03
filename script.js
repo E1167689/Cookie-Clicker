@@ -1,6 +1,8 @@
 var cookies = 0;
 var cursor = 1;
 
+var indexUI = 0;
+
 var pointers = 0;
 var pointerCostVar = 10;
 
@@ -9,6 +11,9 @@ var childrenCostVar = 200;
 
 const counter = document.getElementById("counter");
 
+const shopUI = document.getElementById("shopUI");
+const upgradeUI = document.getElementById("upgradeUI");
+
 const pointerCounter = document.getElementById("pointerCount");
 const pointerCost = document.getElementById("pointerCost");
 
@@ -16,6 +21,26 @@ const childCounter = document.getElementById("childCount");
 const childCost = document.getElementById("childCost");
 
 
+function shop() {
+    indexUI = 0;
+    updateUI();
+}
+
+function upgrades() {
+    indexUI = 1;
+    updateUI();
+}
+
+function updateUI() {
+    if(indexUI == 0) {
+        shopUI.display = "visible";
+        upgradeUI.style.display = "none";
+    }
+    if(indexUI == 1) {
+        shopUI.display = "none";
+        upgradeUI.style.display = "visible";
+    }
+}
 
 function clickMe() {
     cookies += cursor;
@@ -72,5 +97,6 @@ function cookieUpdate() {
     updatePage();
     setTimeout(cookieUpdate, 100);
 }
+
 
 cookieUpdate();
