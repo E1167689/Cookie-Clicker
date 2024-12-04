@@ -2,14 +2,6 @@
     /* outline: red 1px solid; */
 /* } */
 
-#shopUI{
-    background-color: blue;
-}
-
-#UIButtons{
-    display:flex;
-}
-
 
 
 
@@ -27,11 +19,49 @@ body{
 }
 
 #cookie {
+    outline: blue 1px solid;
     cursor: default;
-    height:300px;
-    width:300px;
+    height:500px;
+    width:500px;
+}
+
+#cookieImage {
+    height: inherit;
+    width: inherit;
 }
 
 #cookie:hover{
     cursor: pointer;
+}
+
+#cookieDiv {
+    outline: red 3px solid;
+}
+
+#buy {
+    outline: red 3px solid;
+    display:flex;
+}
+
+#game {
+    display:flex;
+
+}
+
+#counter {
+    outline: blue 1px solid;
+    font-size: 100px;
+    text-align: center;
+}
+
+#buyAllButton {
+    display:none;
+}
+
+#shop {
+    outline: blue 1px solid;
+}
+
+#upgrade {
+    outline: blue 1px solid;
 }

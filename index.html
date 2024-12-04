@@ -15,60 +15,63 @@
             This is the cookie div, which contains the image for the cookie. 
             You can change the cookie to whatever you want by changing the image source.
             -->
-            <div id = "cookie" onclick = "clickMe()">
-                <img src = "cookie.png"/>
-            </div>
-            <div id = "counter">
-                <h2>0</h2>
-            </div>
+            <div id = "game">
+                <div id = "cookieDiv">
+                    <div id = "cookie" onclick = "clickMe()">
+                        <img src = "cookie.png" id="cookieImage"/>
+                    </div>
 
-            <div id = "UIButtons">
+                    <div id = "counter">0</div>
 
-                <div id = "Shop" onclick = "shop()">
-                    <button>
-                        <h1>Shop</h1>
-                    </button>
                 </div>
 
-                <div id = "Upgrades" onclick = "upgrades()">
-                    <button>
-                        <h1>Upgrades</h1>
-                    </button>
-                </div>
+                <div id = "buy">
+                    <div id = "shop">
+                                <!-- Pointer: +1 cookie / second -->
+                        <div id = "pointerButton" onclick = "pointerBuy()">    
+                            <button>
+                                <h2 id= "pointerCount">Pointers: 0</h2>
+                                <h4 id = "pointerCost">Cost: 10</h4>
+                            </button>
+                        </div>
 
+                            <!-- child: +10 cookie / second -->
+                        <div id = "childButton" onclick = "childBuy()">    
+                            <button>
+                                <h2 id= "childCount">Children: 0</h2>
+                                <h4 id = "childCost">Cost: 200</h4>
+                            </button>
+                        </div>
+
+                                <!-- child: +10 cookie / second -->
+                        <div id = "buyAllButton" onclick = "buyAll()">    
+                            <button>
+                                <h4>Buy All</h4>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id = "upgrade">
+                        <div id = "clickerBuff" onclick = "clickerUpgrade1()">
+                            <button>
+                                <h2>Clicker Buff</h2>
+                                <h3>Gives 10 cookies per click</h3>
+                                <h4 id = "clickerBuffCost">Cost: 500</h4>
+                            </button>
+                        </div>
+
+                        <div id = "buyAll" onclick = "clickerUpgrade2()">
+                            <button>
+                                <h2>Buy All</h2>
+                                <h3>Unlocks the Buy All Button</h3>
+                                <h4 id = "clickerBuffCost">Cost: 1000</h4>
+                            </button>
+                        </div>
+
+
+                    </div>
+                </div>
             </div>
-
-            <div id = "shopUI" >
-
-                    <!-- Pointer: +1 cookie / second -->
-                <div id = "pointerButton" onclick = "pointerBuy()">    
-                    <button>
-                        <h2 id= "pointerCount">Pointers: 0</h2>
-                        <h4 id = "pointerCost">Cost: 10</h4>
-                    </button>
-                </div>
-
-                    <!-- child: +10 cookie / second -->
-                <div id = "childButton" onclick = "childBuy()">    
-                    <button>
-                        <h2 id= "childCount">Children: 0</h2>
-                        <h4 id = "childCost">Cost: 200</h4>
-                    </button>
-                </div>
-
-                    <!-- child: +10 cookie / second -->
-                <div id = "buyAllButton" onclick = "buyAll()">    
-                    <button>
-                        <h4>Buy All</h4>
-                    </button>
-                </div>
-            </div>
-
-            <div id = "shopUI" >
-                
-            </div>
-            
-
 
         </div>
 

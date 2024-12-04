@@ -1,7 +1,5 @@
-var cookies = 0;
+var cookies = 1000;
 var cursor = 1;
-
-var indexUI = 0;
 
 var pointers = 0;
 var pointerCostVar = 10;
@@ -20,27 +18,11 @@ const pointerCost = document.getElementById("pointerCost");
 const childCounter = document.getElementById("childCount");
 const childCost = document.getElementById("childCost");
 
+const buyAllButton = document.getElementById("buyAllButton");
+buyAllButton.style.display = "none";
 
-function shop() {
-    indexUI = 0;
-    updateUI();
-}
-
-function upgrades() {
-    indexUI = 1;
-    updateUI();
-}
-
-function updateUI() {
-    if(indexUI == 0) {
-        shopUI.display = "visible";
-        upgradeUI.style.display = "none";
-    }
-    if(indexUI == 1) {
-        shopUI.display = "none";
-        upgradeUI.style.display = "visible";
-    }
-}
+const clickerUpgradeButton1 = document.getElementById("clickerBuff");
+const clickerUpgradeButton2 = document.getElementById("buyAll");
 
 function clickMe() {
     cookies += cursor;
@@ -77,6 +59,21 @@ function buyAll() {
 }
 
 
+function clickerUpgrade1() {
+    if(cookies >= 500) {   
+        clickerUpgradeButton1.style.display = "none";
+        cookies -= 500;
+        cursor = 10;
+    }
+}
+
+function clickerUpgrade2() {
+    if(cookies >= 1000) {
+        clickerUpgradeButton2.style.display = "none";
+        cookies -= 1000;
+        buyAllButton.style.display = "contents";
+    }
+}
 
 
 
@@ -92,10 +89,10 @@ function updatePage(){
 }
 
 function cookieUpdate() {
-    cookies += pointers / 10;
-    cookies += children;
+    cookies += pointers / 100;
+    cookies += children / 10;
     updatePage();
-    setTimeout(cookieUpdate, 100);
+    setTimeout(cookieUpdate, 10);
 }
 
 
